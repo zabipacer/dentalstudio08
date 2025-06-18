@@ -1,81 +1,139 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Star, Clock } from 'lucide-react';
 
-const LocalSEOSection = () => {
+export default function LocalSEOSection() {
   return (
-    <section className="bg-gray-50 py-16 px-6 md:px-12" id="location">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-blue-800 mb-8">
-          Visit Dr. Teeth Dental Care in Faisalabad
-        </h2>
+    <section
+      id="location"
+      className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white"
+      aria-labelledby="location-title"
+    >
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Map Embed */}
+        <motion.div
+          className="rounded-2xl overflow-hidden shadow-2xl border-4 border-gradient-to-br from-orange-400 to-yellow-600"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+        >
+          <iframe
+            title="Dental Studio Abbottabad Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.2863801796016!2d73.23289917476203!3d34.190158610437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38de310e71c6508b%3A0x508419e195013fb1!2sDental%20Studio.(Abbottabad)!5e0!3m2!1sen!2s!4v1750001843458!5m2!1sen!2s"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+          />
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Google Maps Embed */}
-          <div className="w-full h-80 rounded-lg overflow-hidden shadow-md">
-            <iframe
-              title="Dr. Teeth Dental Care Faisalabad Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13616.123456789!2d73.1040157!3d31.4015913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922677a4d131f8f%3A0x502ed6b52d5002c8!2sDr.%20Teeth%20Dental%20Care!5e0!3m2!1sen!2s!4v1680000000000!5m2!1sen!2s"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+        {/* Clinic Info */}
+        <motion.div
+          className="space-y-6"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2
+            id="location-title"
+            className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-600"
+          >
+            Dental Studio (Abbottabad)
+          </h2>
 
-          {/* Clinic Information */}
-          <div>
-            <p className="text-lg text-gray-700 mb-4">
-              <strong>Address:</strong> Doctor Teeth Dental Clinic Ajmal Center, opposite Gourmet Bakery, near Nadra Executive, Batala Colony, Faisalabad.
-          
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              <strong>Phone:</strong> <a href="tel:03334271398" className="text-blue-600 hover:underline">0321-6739504</a>
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              <strong>Service Areas:</strong> Eden Valley, Jinnah Colony, Batala Colony, Peoples Colony, Gulberg, and surrounding areas.
-            </p>
+          <ul className="space-y-4 text-lg">
+            <li className="flex items-center">
+              <MapPin className="w-6 h-6 text-orange-400 flex-shrink-0 mr-3" />
+              <span>Jadoon Plaza Phase 2 Rd, Phase 2, Abbottabad</span>
+            </li>
+            <li className="flex items-center">
+              <Phone className="w-6 h-6 text-orange-400 flex-shrink-0 mr-3" />
+              <a href="tel:+923005615535" className="underline">
+                +92 300 5615535
+              </a>
+            </li>
+            <li className="flex items-center">
+              <Star className="w-6 h-6 text-orange-400 flex-shrink-0 mr-3" />
+              <span>5.0 (58 Google Reviews)</span>
+            </li>
+            <li className="flex items-center">
+              <MapPin className="w-6 h-6 text-orange-400 flex-shrink-0 mr-3" />
+              <span>Serving Abbottabad & nearby areas</span>
+            </li>
+            <li className="flex items-center">
+              <Clock className="w-6 h-6 text-orange-400 flex-shrink-0 mr-3" />
+              <span>Monday to Saturday 3 PM to 9PM : </span>
+              <br/>
+              <span>  Friday 4 PM to 9PM</span>
+           
+            </li>
+          </ul>
+
+          <motion.div
+            className="mt-6 inline-flex items-center space-x-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <a
-  href="https://g.co/kgs/dnjVekN" // Replace with your correct number
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block mt-4 px-6 py-3 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 transition duration-300"
->
-  Need Help Finding our clinic in Faisalabad?
-</a>
+              href="#booking"
+              className="px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-600 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Book Online
+            </a>
+            <a
+              href="tel:+923005615535"
+              className="px-6 py-3 border-2 border-orange-400 text-orange-400 font-semibold rounded-full hover:bg-orange-400 hover:text-black transition-all duration-300"
+            >
+              Call Now
+            </a>
+          </motion.div>
 
+        </motion.div>
+      </div>
 
-          </div>
-        </div>
-
-        {/* Schema.org LocalBusiness Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
+      {/* JSON-LD for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Dentist",
-            "name": "Dr. Teeth Dental Care",
-            "image": "https://example.com/logo.png",
-            "address": {
+            name: "Dental Studio. (Abbottabad)",
+            url: "https://g.co/kgs/R1u9bnN",
+            telephone: "+923005615535",
+            address: {
               "@type": "PostalAddress",
-              "streetAddress": "208 Chak Road, Jinnah Avenue, Eden Valley",
-              "addressLocality": "Faisalabad",
-              "addressRegion": "Punjab",
-              "postalCode": "38000",
-              "addressCountry": "PK"
+              streetAddress: "Jadoon Plaza Phase 2 Rd, Phase 2",
+              addressLocality: "Abbottabad",
+              addressRegion: "Khyber Pakhtunkhwa",
+              postalCode: "22010",
+              addressCountry: "PK"
             },
-            "geo": {
+            geo: {
               "@type": "GeoCoordinates",
-              "latitude": 31.4015913,
-              "longitude": 73.1040157
+              latitude: 34.1466,
+              longitude: 73.2107
             },
-            "url": "https://yourwebsite.com",
-            "telephone": "+92-333-4271398",
-            "openingHours": "Mo-Su 09:00-23:00"
-          })}
-        </script>
-      </div>
+            openingHoursSpecification: [{
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday"],
+              opens: "15:00",
+              closes: "19:00"
+            }],
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5.0",
+              reviewCount: "58"
+            },
+            additionalType: "https://schema.org/EmergencyService"
+          })
+        }}
+      />
     </section>
   );
-};
-
-export default LocalSEOSection;
+}

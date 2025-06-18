@@ -1,127 +1,155 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const faqs = [
-  {
-    question: 'What is the cost of dental implants in Faisalabad?',
+ {
+    question: 'How much do dental implants cost in Abbottabad at Dental Studio?',
     answer: (
       <>
-        The cost of dental implants in Faisalabad varies based on the clinic and the specific requirements of the patient. On average, the fee ranges from PKR 300 to 2,000 per consultation. For detailed pricing, please refer to our <a href="/dental-implants-faisalabad" className="text-teal-600 underline">Dental Implants in Faisalabad</a> page.
+        At Dental Studio (Abbottabad), implant pricing depends on implant type and complexity. Costs range from PKR 20,000 to PKR 50,000 per implant. Visit our <a href="/dental-implants-abbottabad" className="text-orange-400 underline">Abbottabad Implants</a> page for details.
       </>
     ),
   },
   {
-    question: 'Do you offer payment plans for dental treatments?',
+    question: 'Do you offer flexible payment plans for Abbottabad patients?',
     answer: (
       <>
-        Yes, we provide flexible payment plans for various treatments, including implants, braces, and cosmetic procedures. Our goal is to make quality dental care accessible to everyone in Faisalabad.
+        Yes! We provide tailored financing options for implants, braces, and cosmetic treatments to make quality dental care accessible across Abbottabad.
       </>
     ),
   },
   {
-    question: 'How often should I visit the dentist for a check-up?',
+    question: 'How often should I visit Dental Studio in Abbottabad?',
     answer: (
       <>
-        It's recommended to visit the dentist every six months for a routine check-up and cleaning. Regular visits help in early detection and prevention of dental issues.
+        We recommend biannual checkups (every 6 months) for preventive cleaning and early issue detection, keeping your teeth healthy and bright.
       </>
     ),
   },
   {
-    question: 'Are teeth whitening procedures safe?',
+    question: 'Are professional teeth whitening treatments safe at Dental Studio?',
     answer: (
       <>
-        Professional teeth whitening procedures are safe when performed under the supervision of qualified dental professionals. We use approved methods to ensure effective and safe results.
+        Absolutely—our in-office whitening uses medical-grade agents under expert supervision, delivering safe results in 45–60 minutes.
       </>
     ),
   },
   {
-    question: 'What are the options for replacing missing teeth?',
+    question: 'What options does Dental Studio offer for missing teeth?',
     answer: (
       <>
-        Options for replacing missing teeth include dental implants, bridges, and dentures. The best option depends on individual needs and oral health status. Consult our specialists to determine the most suitable solution for you.
+        We provide implants, bridges, and dentures. Our specialists will recommend the best solution tailored to your oral health and lifestyle in Abbottabad.
       </>
     ),
   },
   {
-    question: 'Do you provide emergency dental services in Faisalabad?',
+    question: 'Does Dental Studio handle dental emergencies in Abbottabad?',
     answer: (
       <>
-        Yes, we offer emergency dental services to address urgent dental issues promptly. Please contact our clinic immediately if you require emergency care.
+        Yes, we offer 24/7 emergency care for severe toothaches, broken crowns, and trauma. Call us immediately for prompt assistance.
       </>
     ),
   },
   {
-    question: 'What is the process for getting braces?',
+    question: 'What is the braces and aligners fitting process?',
     answer: (
       <>
-        The process begins with a consultation to assess your dental alignment. If braces are suitable, we'll develop a personalized treatment plan. Regular follow-up visits are essential to monitor progress.
+        After a detailed exam and 3D scan, we design a custom braces or aligner plan. Follow-ups every 4–6 weeks ensure steady progress.
       </>
     ),
   },
   {
-    question: 'Is root canal treatment painful?',
+    question: 'Is root canal therapy painful at Dental Studio?',
     answer: (
       <>
-        Modern root canal treatments are performed under local anesthesia, making the procedure relatively painless. Our experienced dentists ensure patient comfort throughout the process.
+        Modern root canals here use local anesthesia and rotary instruments, making treatment virtually painless for most patients.
       </>
     ),
   },
   {
-    question: 'Do you offer pediatric dental services?',
+    question: 'Do you offer pediatric dental care in Abbottabad?',
     answer: (
       <>
-        Yes, we provide comprehensive dental care for children, focusing on preventive measures and creating a comfortable environment for young patients.
+        Yes—our clinic provides gentle pediatric dentistry, including sealants and habit counseling, ensuring a positive first dental experience.
       </>
     ),
   },
   {
-    question: 'What precautions are taken for infection control?',
+    question: 'How do you ensure infection control at Dental Studio?',
     answer: (
       <>
-        We adhere to strict sterilization protocols and use disposable instruments where applicable to ensure the highest standards of infection control.
+        We follow strict sterilization protocols—autoclaves, disposable tools, and medical-grade disinfectants guarantee 100% patient safety.
       </>
     ),
   },
+  // ... other FAQs remain unchanged
 ];
 
-const FaqAccordion = () => {
+export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState(null);
-
-  const toggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="bg-gray-50 py-16 px-4" id="faq" itemScope itemType="https://schema.org/FAQPage">
+    <section
+      id="faq"
+      className="bg-gray-800 py-20 px-6 text-white"
+      aria-labelledby="faq-title"
+      itemScope
+      itemType="https://schema.org/FAQPage"
+    >
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-blue-800 text-center mb-10">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-lg bg-white shadow-sm"
+        <motion.h2
+          id="faq-title"
+          className="text-4xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Abbottabad Dental Studio FAQs
+        </motion.h2>
+
+        <div className="space-y-5">
+          {faqs.map((faq, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-gray-700 rounded-2xl overflow-hidden border border-gray-600"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
               itemScope
               itemProp="mainEntity"
               itemType="https://schema.org/Question"
             >
               <button
-                className="w-full text-left px-6 py-4 font-medium text-blue-700 focus:outline-none flex justify-between items-center"
-                onClick={() => toggle(index)}
+                className="w-full flex justify-between items-center px-6 py-5 text-left font-semibold text-yellow-400 bg-gray-900 hover:bg-gray-800 transition-colors"
+                onClick={() => toggle(idx)}
+                itemProp="name"
               >
-                <span itemProp="name">{faq.question}</span>
-                <span className="text-xl">{openIndex === index ? '−' : '+'}</span>
+                {faq.question}
+                <span className="text-2xl text-white">{openIndex === idx ? '−' : '+'}</span>
               </button>
-              {openIndex === index && (
-                <div className="px-6 pb-4 text-gray-700 text-sm" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                  <div itemProp="text">{faq.answer}</div>
-                </div>
+
+              {openIndex === idx && (
+                <motion.div
+                  className="px-6 pb-6 bg-gray-800"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                >
+                  <div itemProp="text" className="text-gray-200">
+                    {faq.answer}
+                  </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default FaqAccordion;
+}
