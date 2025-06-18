@@ -79,7 +79,7 @@ export default function Footer() {
             </a>
           </div>
           <a
-            href="#booking"
+            href="https://wa.me/923005615535"
             className="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-600 text-black font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Book Your Appointment

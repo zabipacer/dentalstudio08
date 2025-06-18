@@ -29,7 +29,7 @@ export default function NewPatientsBanner() {
             Upgrade your dental care with personalized attention and expertise. Schedule a consultation with <strong>Dr. Tahir Awan</strong>, your trusted general dentist.
           </p>
           <a
-            href="#booking"
+            href="https://wa.me/923005615535"
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-yellow-600 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Book Online

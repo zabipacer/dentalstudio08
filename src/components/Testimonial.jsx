@@ -32,7 +32,7 @@ const testimonials = [
   },
   {name:"M Shahaid",
     text:"Dr. Tahir is an exceptional dental professional. I, Shahid, had several issues with my teeth, but his humble and professional approach made the entire experience smooth and stress-free. He patiently guided me through every step of the process. My fillings were in poor condition, but Dr. Tahir expertly fixed them and provided clear aftercare instructions. Thanks to his expertise, I am now completely satisfied with the treatment. Highly recommended!",
-    image:"/shahid1.png"
+    image:"/shahid.png"
   }
 
 ];

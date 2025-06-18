@@ -41,7 +41,7 @@ export default function AboutDoctor() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <a
-              href="#booking"
+              href="https://wa.me/923005615535"
               className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-yellow-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Book an Appointment

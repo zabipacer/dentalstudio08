@@ -87,7 +87,7 @@ export default function WhyChooseUs() {
         transition={{ duration: 0.8 }}
       >
         <a
-          href="#booking"
+          href="https://wa.me/923005615535"
           className="inline-block px-10 py-4 bg-gradient-to-r from-orange-500 to-yellow-600 text-black font-bold rounded-full shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
         >
           Book Your Consultation

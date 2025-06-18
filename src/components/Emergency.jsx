@@ -30,7 +30,7 @@ export default function EmergencyBanner() {
             Fast, expert care for tooth pain, broken crowns, and more. Available 24/7.
           </p>
           <a
-            href="#booking"
+            href="https://wa.me/923005615535"
             className="inline-flex items-center justify-center px-8 py-4 bg-black bg-opacity-75 hover:bg-opacity-90 text-orange-400 font-semibold rounded-full shadow-lg transition-all duration-300"
           >
             Book Emergency Slot

@@ -80,7 +80,7 @@ export default function LocalSEOSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <a
-              href="#booking"
+              href="https://wa.me/923005615535"
               className="px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-600 text-black font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Book Online
