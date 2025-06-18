@@ -96,7 +96,7 @@ const services = [
     title: 'Pain-Free Root Canal Treatment ',
     description: 'Gentle, modern root canal therapy using advanced techniques to save infected teeth without discomfort.',
     icon: <FaXRay className="text-4xl text-orange-400" aria-hidden="true" />,
-    image: 'https://images.unsplash.com/photo-1559829482-c137d28f0a83?w=400&h=250&fit=crop&crop=center',
+    image: '/assets/images/root-canal.png',
     link: '/root-canal-abbottabad',
   },
   {
@@ -117,7 +117,7 @@ const services = [
     title: 'Gum Disease & Periodontal Care',
     description: 'Comprehensive periodontal treatment using minimally invasive techniques to restore gum health.',
     icon: <FaHeadSideVirus className="text-4xl text-orange-400" aria-hidden="true" />,
-    image: 'https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=400&h=250&fit=crop&crop=center',
+    image: '/assets/images/gum.png',
     link: '/gum-disease-treatment-abbottabad',
   },
   {
@@ -138,7 +138,7 @@ const services = [
     title: 'TMJ & Jaw Pain Therapy',
     description: 'Specialized treatment for temporomandibular joint disorders and chronic jaw pain relief.',
     icon: <FaBriefcaseMedical className="text-4xl text-orange-400" aria-hidden="true" />,
-    image: 'https://images.unsplash.com/photo-1559829482-c137d28f0a83?w=400&h=250&fit=crop&crop=center',
+    image: '/assets/images/jaw.png',
     link: '/tmj-treatment-abbottabad',
   },
 ];
