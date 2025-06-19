@@ -3,6 +3,16 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Star, Clock } from 'lucide-react';
 
 export default function LocalSEOSection() {
+  const schedule = [
+    { day: 'Thursday', hours: '3 PM – 9:30 PM' },
+    { day: 'Friday',   hours: '4 PM – 9:30 PM' },
+    { day: 'Saturday', hours: '3 PM – 9:30 PM' },
+    { day: 'Sunday',   hours: 'Closed' },
+    { day: 'Monday',   hours: '3 PM – 9:30 PM' },
+    { day: 'Tuesday',  hours: '3 PM – 9:30 PM' },
+    { day: 'Wednesday',hours: '3 PM – 9:30 PM' },
+  ];
+
   return (
     <section
       id="location"
@@ -63,12 +73,16 @@ export default function LocalSEOSection() {
               <MapPin className="w-6 h-6 text-orange-400 flex-shrink-0 mr-3" />
               <span>Serving Abbottabad & nearby areas</span>
             </li>
-            <li className="flex items-center">
+            <li>
               <Clock className="w-6 h-6 text-orange-400 flex-shrink-0 mr-3" />
-              <span>Monday to Saturday 3 PM to 9PM : </span>
-              <br/>
-              <span>  Friday 4 PM to 9PM</span>
-           
+              <ul className="ml-9 space-y-1">
+                {schedule.map((item) => (
+                  <li key={item.day} className="flex">
+                    <span className="w-24 font-semibold">{item.day}:  </span>
+                    <span>  {item.hours}</span>
+                  </li>
+                ))}
+              </ul>
             </li>
           </ul>
 
@@ -119,12 +133,14 @@ export default function LocalSEOSection() {
               latitude: 34.1466,
               longitude: 73.2107
             },
-            openingHoursSpecification: [{
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: ["Monday"],
-              opens: "15:00",
-              closes: "19:00"
-            }],
+            openingHoursSpecification: [
+              { dayOfWeek: "Monday",    opens: "15:00", closes: "21:30" },
+              { dayOfWeek: "Tuesday",   opens: "15:00", closes: "21:30" },
+              { dayOfWeek: "Wednesday", opens: "15:00", closes: "21:30" },
+              { dayOfWeek: "Thursday",  opens: "15:00", closes: "21:30" },
+              { dayOfWeek: "Friday",    opens: "16:00", closes: "21:30" },
+              { dayOfWeek: "Saturday",  opens: "15:00", closes: "21:30" }
+            ],
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: "5.0",

@@ -47,10 +47,10 @@ export default function AboutDoctor() {
               Book an Appointment
             </a>
             <a
-              href="tel:+923082220346"
+              href="tel:+923005615535"
               className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-orange-400 text-orange-400 font-semibold rounded-full shadow-md hover:bg-orange-400 hover:text-black transition-all duration-300"
             >
-              Call Dr. Awan: +92 308 2220346
+              Call Dr. Awan: +92 300 5615535
             </a>
           </motion.div>
         </motion.div>
