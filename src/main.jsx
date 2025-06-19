@@ -24,6 +24,7 @@ import EmergencyDentistFaisalabad from "./pages/Emergency";
 import MaxillofacialSurgeryFaisalabad from "./pages/Maxillofacial";
 import TMJTreatmentFaisalabad from "./pages/Tmj";
 import DentalCheckupLandingPage from "./pages/DentalCeckup";
+import ServicePage from "./pages/Servicepage";
 
 const router = createBrowserRouter([
   {
@@ -119,7 +120,11 @@ const router = createBrowserRouter([
     path: "/dental-checkup-faisalabad", // Home route
     element: <DentalCheckupLandingPage/>, // Show App component in the Layout
 
-  },  // Add more routes here as needed
+  },
+  {
+    path:"/services/:slug",
+    element:<ServicePage/>
+  }  // Add more routes here as needed
     ],
   },
 ]);

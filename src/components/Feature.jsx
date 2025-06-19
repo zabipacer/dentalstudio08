@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import {
   FaClinicMedical,
   FaTooth,
@@ -27,119 +27,119 @@ const services = [
     description: 'Comprehensive oral health examinations and preventive care to maintain your beautiful smile in the scenic city of Abbottabad.',
     icon: <FaClinicMedical className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=250&fit=crop&crop=center',
-    link: '/preventive-dental-checkup-abbottabad',
+    slug: 'preventive-dental-checkup-abbottabad',
   },
   {
     title: 'Professional Scaling & Polishing',
     description: 'Advanced plaque removal and teeth polishing services using state-of-the-art equipment for optimal oral hygiene.',
     icon: <FaTooth className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=250&fit=crop&crop=center',
-    link: '/scaling-polishing-abbottabad',
+    slug: 'scaling-polishing-abbottabad',
   },
   {
     title: 'Fluoride Treatment',
     description: 'Professional fluoride applications to strengthen tooth enamel and prevent cavities for patients across Abbottabad.',
     icon: <FaShieldAlt className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=250&fit=crop&crop=center',
-    link: '/fluoride-treatment-abbottabad',
+    slug: 'fluoride-treatment-abbottabad',
   },
   {
     title: 'Advanced Teeth Whitening',
     description: 'Transform your smile with professional teeth whitening treatments that deliver remarkable results in just one session.',
     icon: <FaSmile className="text-4xl text-orange-400" aria-hidden="true" />,
     image: '/assets/images/tw.png',
-    link: '/teeth-whitening-abbottabad',
+    slug: 'teeth-whitening-abbottabad',
   },
   {
     title: 'Custom Smile Makeovers',
     description: 'Complete smile transformations combining multiple cosmetic procedures to achieve your dream smile.',
     icon: <FaRegLaughBeam className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=250&fit=crop&crop=center',
-    link: '/smile-makeover-abbottabad',
+    slug: 'smile-makeover-abbottabad',
   },
   {
     title: 'Premium Veneers ',
     description: 'High-quality porcelain and composite veneers crafted to perfection for a flawless, natural-looking smile.',
     icon: <FaSmile className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=250&fit=crop&crop=center',
-    link: '/veneers-abbottabad',
+    slug: 'veneers-abbottabad',
   },
   {
     title: 'Tooth-Colored Fillings',
     description: 'Aesthetic composite fillings that restore function while maintaining the natural appearance of your teeth.',
     icon: <FaTooth className="text-4xl text-orange-400" aria-hidden="true" />,
     image: '/assets/images/dc.png',
-    link: '/dental-fillings-abbottabad',
+    slug: 'dental-fillings-abbottabad',
   },
   {
     title: 'Crowns & Bridges Restoration',
     description: 'Durable, natural-looking crowns and bridges to restore damaged teeth and replace missing ones.',
     icon: <FaRegLaughBeam className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=250&fit=crop&crop=center',
-    link: '/crowns-bridges-abbottabad',
+    slug: 'crowns-bridges-abbottabad',
   },
   {
     title: 'Dental Implants',
     description: 'Permanent tooth replacement solutions with titanium implants for long-lasting, natural-feeling results.',
     icon: <FaTeeth className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=250&fit=crop&crop=center',
-    link: '/dental-implants-abbottabad',
+    slug: 'dental-implants-abbottabad',
   },
   {
     title: 'Orthodontic Braces & Aligners',
     description: 'Modern orthodontic solutions including clear aligners and traditional braces for perfectly aligned teeth.',
     icon: <FaTeethOpen className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=250&fit=crop&crop=center',
-    link: '/braces-aligners-abbottabad',
+    slug: 'braces-aligners-abbottabad',
   },
   {
     title: 'Pain-Free Root Canal Treatment ',
     description: 'Gentle, modern root canal therapy using advanced techniques to save infected teeth without discomfort.',
     icon: <FaXRay className="text-4xl text-orange-400" aria-hidden="true" />,
     image: '/assets/images/root-canal.png',
-    link: '/root-canal-abbottabad',
+    slug: 'root-canal-abbottabad',
   },
   {
     title: 'Wisdom Tooth Extraction ',
     description: 'Safe, comfortable wisdom tooth removal procedures performed by experienced oral surgeons.',
     icon: <FaUserMd className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=250&fit=crop&crop=center',
-    link: '/wisdom-tooth-extraction-abbottabad',
+    slug: 'wisdom-tooth-extraction-abbottabad',
   },
   {
     title: 'Pediatric Dentistry',
     description: 'Specialized dental care for children with a gentle, friendly approach to create positive dental experiences.',
     icon: <FaChild className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=400&h=250&fit=crop&crop=center',
-    link: '/pediatric-dentistry-abbottabad',
+    slug: 'pediatric-dentistry-abbottabad',
   },
   {
     title: 'Gum Disease & Periodontal Care',
     description: 'Comprehensive periodontal treatment using minimally invasive techniques to restore gum health.',
     icon: <FaHeadSideVirus className="text-4xl text-orange-400" aria-hidden="true" />,
     image: '/assets/images/gum.png',
-    link: '/gum-disease-treatment-abbottabad',
+    slug: 'gum-disease-treatment-abbottabad',
   },
   {
     title: 'Emergency Dental Services in Abbottabad',
     description: '24/7 emergency dental care for urgent situations including severe pain, trauma, and dental emergencies.',
     icon: <FaFirstAid className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=250&fit=crop&crop=center',
-    link: '/emergency-dentist-abbottabad',
+    slug: 'emergency-dentist-abbottabad',
   },
   {
     title: 'Maxillofacial Surgery ',
     description: 'Expert surgical procedures for complex dental and facial conditions performed by qualified specialists.',
     icon: <FaProcedures className="text-4xl text-orange-400" aria-hidden="true" />,
     image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=250&fit=crop&crop=center',
-    link: '/maxillofacial-surgery-abbottabad',
+    slug: 'maxillofacial-surgery-abbottabad',
   },
   {
     title: 'TMJ & Jaw Pain Therapy',
     description: 'Specialized treatment for temporomandibular joint disorders and chronic jaw pain relief.',
     icon: <FaBriefcaseMedical className="text-4xl text-orange-400" aria-hidden="true" />,
     image: '/assets/images/jaw.png',
-    link: '/tmj-treatment-abbottabad',
+    slug: 'tmj-treatment-abbottabad',
   },
 ];
 
@@ -180,7 +180,7 @@ const FeaturedServices = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-12">
-          {displayedServices.map(({ title, description, icon, image, link }, idx) => (
+          {displayedServices.map(({ title, description, icon, image, link,slug }, idx) => (
             <motion.article
               key={title}
               className="group relative bg-gradient-to-br from-gray-800 to-black rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:border-orange-400 transition-all duration-300"
@@ -222,7 +222,7 @@ const FeaturedServices = () => {
                 {/* Call to Action */}
                 <div className="flex items-center justify-between">
                   <a
-                    href={link}
+                    href={`/services/${slug}`}
                     className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium text-sm transition-colors duration-300 group/link"
                   >
                     Learn More
